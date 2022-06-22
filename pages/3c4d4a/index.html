@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>MySQL常用命令 | 冲！冲！冲！</title>
+    <meta name="generator" content="VuePress 1.9.5">
+    <link rel="icon" href="/images/head-logo.jpg">
+    <meta name="description" content="GO! GO! GO!">
+    
+    <link rel="preload" href="/assets/css/0.styles.0c399677.css" as="style"><link rel="preload" href="/assets/js/app.0d832ab6.js" as="script"><link rel="preload" href="/assets/js/2.8f160e24.js" as="script"><link rel="preload" href="/assets/js/32.7001f772.js" as="script"><link rel="prefetch" href="/assets/js/10.3d9b4e16.js"><link rel="prefetch" href="/assets/js/11.4e056d62.js"><link rel="prefetch" href="/assets/js/12.affa2bb8.js"><link rel="prefetch" href="/assets/js/13.d4231f35.js"><link rel="prefetch" href="/assets/js/14.a8d37966.js"><link rel="prefetch" href="/assets/js/15.ccb4309e.js"><link rel="prefetch" href="/assets/js/16.122e55e2.js"><link rel="prefetch" href="/assets/js/17.731c061e.js"><link rel="prefetch" href="/assets/js/18.6ade0574.js"><link rel="prefetch" href="/assets/js/19.86605151.js"><link rel="prefetch" href="/assets/js/20.3831bfc5.js"><link rel="prefetch" href="/assets/js/21.dcd169a6.js"><link rel="prefetch" href="/assets/js/22.f844edeb.js"><link rel="prefetch" href="/assets/js/23.e6fb07ca.js"><link rel="prefetch" href="/assets/js/24.92d04674.js"><link rel="prefetch" href="/assets/js/25.c60d29fe.js"><link rel="prefetch" href="/assets/js/26.0d51d958.js"><link rel="prefetch" href="/assets/js/27.9f19bf6a.js"><link rel="prefetch" href="/assets/js/28.19eb389a.js"><link rel="prefetch" href="/assets/js/29.dab9dbf5.js"><link rel="prefetch" href="/assets/js/3.bb85e424.js"><link rel="prefetch" href="/assets/js/30.57303ed0.js"><link rel="prefetch" href="/assets/js/31.b315a882.js"><link rel="prefetch" href="/assets/js/33.19bd3a46.js"><link rel="prefetch" href="/assets/js/34.3968f9d0.js"><link rel="prefetch" href="/assets/js/35.9d7e0ffb.js"><link rel="prefetch" href="/assets/js/36.299f8f75.js"><link rel="prefetch" href="/assets/js/37.7289918d.js"><link rel="prefetch" href="/assets/js/38.c5900f0c.js"><link rel="prefetch" href="/assets/js/39.9d63469c.js"><link rel="prefetch" href="/assets/js/4.620e00b3.js"><link rel="prefetch" href="/assets/js/40.eae5b6fb.js"><link rel="prefetch" href="/assets/js/41.f4b09d3d.js"><link rel="prefetch" href="/assets/js/42.9724cb80.js"><link rel="prefetch" href="/assets/js/43.8184dd6f.js"><link rel="prefetch" href="/assets/js/44.def4ec73.js"><link rel="prefetch" href="/assets/js/45.6f98a0f4.js"><link rel="prefetch" href="/assets/js/46.75a2c9db.js"><link rel="prefetch" href="/assets/js/47.7b4acdf8.js"><link rel="prefetch" href="/assets/js/48.3d594ddb.js"><link rel="prefetch" href="/assets/js/49.88bf6d16.js"><link rel="prefetch" href="/assets/js/5.019fad3e.js"><link rel="prefetch" href="/assets/js/50.4dc46aa7.js"><link rel="prefetch" href="/assets/js/51.cb0d0fb6.js"><link rel="prefetch" href="/assets/js/52.c9e89abe.js"><link rel="prefetch" href="/assets/js/53.4944f9a8.js"><link rel="prefetch" href="/assets/js/54.4f8d3a28.js"><link rel="prefetch" href="/assets/js/55.a35e56f7.js"><link rel="prefetch" href="/assets/js/56.2594cd7d.js"><link rel="prefetch" href="/assets/js/57.e4ba4da0.js"><link rel="prefetch" href="/assets/js/58.5813e6b8.js"><link rel="prefetch" href="/assets/js/6.674a6ed1.js"><link rel="prefetch" href="/assets/js/7.a02c519b.js"><link rel="prefetch" href="/assets/js/8.d374dc82.js"><link rel="prefetch" href="/assets/js/9.3822014c.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.0c399677.css">
+  </head>
+  <body class="theme-mode-light">
+    <div id="app" data-server-rendered="true"><div class="theme-container sidebar-open have-rightmenu have-body-img"><header class="navbar blur"><div title="目录" class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/images/logo.jpg" alt="冲！冲！冲！" class="logo"> <span class="site-name can-hide">冲！冲！冲！</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><a href="/centos7/" class="nav-link">centos7</a></div><div class="nav-item"><a href="/command/" class="nav-link">常用命令</a></div><div class="nav-item"><a href="/java/" class="nav-link">Java</a></div> <a href="https://github.com/xiaomai653/blog" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar-hover-trigger"></div> <aside class="sidebar" style="display:none;"><div class="blogger"><img src="/images/author.jpg"> <div class="blogger-info"><h3>小麦</h3> <span>不积硅步，无以至千里。</span></div></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><a href="/centos7/" class="nav-link">centos7</a></div><div class="nav-item"><a href="/command/" class="nav-link">常用命令</a></div><div class="nav-item"><a href="/java/" class="nav-link">Java</a></div> <a href="https://github.com/xiaomai653/blog" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>centos7</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>常用命令</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/ab63d6/" class="sidebar-link">Docker常用命令</a></li><li><a href="/pages/115b69/" class="sidebar-link">Git常用命令</a></li><li><a href="/pages/33ee6d/" class="sidebar-link">Linux常用命令</a></li><li><a href="/pages/3c4d4a/" aria-current="page" class="active sidebar-link">MySQL常用命令</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/pages/3c4d4a/#mysql常用命令" class="sidebar-link">MySQL常用命令</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/pages/3c4d4a/#数据库管理命令" class="sidebar-link">数据库管理命令</a></li><li class="sidebar-sub-header"><a href="/pages/3c4d4a/#数据库操作sql语句" class="sidebar-link">数据库操作SQL语句</a></li></ul></li></ul></li><li><a href="/pages/a1ed3d/" class="sidebar-link">Nginx常用命令</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Java</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>笔记</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <div><main class="page"><div class="theme-vdoing-wrapper "><div class="articleInfo-wrap" data-v-0c557b5e><div class="articleInfo" data-v-0c557b5e><ul class="breadcrumbs" data-v-0c557b5e><li data-v-0c557b5e><a href="/" title="首页" class="iconfont icon-home router-link-active" data-v-0c557b5e></a></li> <li data-v-0c557b5e><a href="/categories/?category=%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99" title="分类" data-v-0c557b5e>学习资料</a></li><li data-v-0c557b5e><a href="/categories/?category=%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4" title="分类" data-v-0c557b5e>常用命令</a></li></ul> <div class="info" data-v-0c557b5e><div title="作者" class="author iconfont icon-touxiang" data-v-0c557b5e><a href="javascript:;" data-v-0c557b5e>xiaomai</a></div> <div title="创建时间" class="date iconfont icon-riqi" data-v-0c557b5e><a href="javascript:;" data-v-0c557b5e>2022-01-17</a></div> <!----></div></div></div> <!----> <div class="content-wrapper"><div class="right-menu-wrapper"><div class="right-menu-margin"><div class="right-menu-content"></div></div></div> <h1><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAABGpJREFUSA3tVVtoXFUU3fvOI53UlmCaKIFmwEhsE7QK0ipFEdHEKpXaZGrp15SINsXUWvBDpBgQRKi0+KKoFeJHfZA+ED9KKoIU2gYD9UejTW4rVIzm0VSTziPzuNu1z507dibTTjL4U/DAzLn3nL3X2o91ziX6f9wMFdh6Jvbm9nNSV0msViVO6tN1Rm7NMu2OpeJ9lWBUTDxrJbYTS0hInuwciu9eLHlFxCLCZEk3MegsJmZ5K/JD6t7FkFdEvGUo1g7qJoG3MHImqRIn8/nzY1K9UPKKiJmtnUqHVE3Gbuay6vJE/N2FEmuxFjW2nUuE0yQXRRxLiTUAzs36zhZvOXJPdX850EVnnLZkB8prodQoM5JGj7Xk2mvC7JB8tG04Ef5PiXtG0UtxupRQSfTnBoCy554x18yJHI6I+G5Eru4LHmPJZEQsrvPUbMiA8G/WgMK7w7I+ez7++o2ANfbrjvaOl1tFMs+htG3IrZH9/hDX1Pr8Tc0UvH8tcX29KzAgIGcEkINyW5BF9x891hw6VYqgJHEk0huccS7vh3C6gTiODL+26huuBtbct8eZnqLML8PkxGYpuPZBqtqwkSjgc4mB5gbgig5i+y0UDK35LMxXisn9xQtK+nd26gTIHsHe/oblK/b29fUmN/8Y+9jAQrnBp56m1LcDlDp9irKTExSKduXJVWSqdBMA08pEJnEIOB3FPPMybu/oeV8zFeYN3xx576Q6RH+VmplE4ncQV5v+5rzSoyOU7PuEAg8g803PwBJ0CExno/jcMbN8tONYeOmHiuUNryvm3fRUy4tMPVLdAGkUhNWuggGrJcXPv+ouCjz0MKUHz1J2/E8IC9nqTabcxgaBYM0hPhD5Y65FsbxRQKxCQrDjDctW7PUM3HuZunFyifSAqEfuzCp48Il24luWUWZoyJCaPR82jE0+kFA643wRFVni4RYSq3ohJO2pZ7B5dO4xkDWbEpossJPLSrPjYID8rS2UHTlvyNxqIGsg674XJJ7vnh5L7PNwC4hh2sjCI96mzszOTpxLF0T7l88Yz7lAuK6OnL8gXLOnTvpzSb22YG8W7us3jSebFHeeqnXRG1vt+MoUM84LQIBmMsCTAcOauTh0T0l0neQK7m2bLMt2mGxU3HYssS0J2cdv5wljlPsrIuZLAG/2DOZIXgCYT8uMGZN+e2kSirfxZOPCsC0f24nTZzspnVn9VePS1Z5vubmAGGXG8ZFno9Hel0yfA5ZPhF7Dh972BQJ2qCpgH67lmWtBYbvk6sz02wjky2vXyz0XErP/kFB619js1BtwfOV4OPRqOQBjy3Qbk18vigUPPSD5ceHnwck7W9bhAqZdd7SuG7w4/P2F/GaJh8c7e9qgow+Q7cGBo+98WsLkuktFqiZabtXuQTu/Y5ETbR0v7tNSFnvrmu6pjdoan2KjMu8q/Hmj1EfCO2ZGfEIbIXKUlw8qaX9/b2oeSJmFksSeT/Fn0V3nSypChh4Gjh74ybO9aeZ/AN2dwciu2/MhAAAAAElFTkSuQmCC">MySQL常用命令<!----></h1> <!----> <div class="theme-vdoing-content content__default"><h2 id="mysql常用命令"><a href="#mysql常用命令" class="header-anchor">#</a> MySQL常用命令</h2> <p>将常用到的MySQL的一些命令在这里做个记录，便于查询和更新。</p> <p>mysql安装完成之后，在/var/log/mysqld.log文件中给root生成了一个默认密码，这时候第一次登录mysql数据库时需要修改这个生成的默认密码。</p> <div class="language- extra-class"><pre class="language-text"><code>systemctl start mysqld.service 启动
+systemctl stop mysqld.service 停止
+systemctl restart mysqld.service 重启
+
+#mysql配置文件
+etc/my.cnf 
+</code></pre></div><h3 id="数据库管理命令"><a href="#数据库管理命令" class="header-anchor">#</a> 数据库管理命令</h3> <h4 id="_1、登入数据库相关"><a href="#_1、登入数据库相关" class="header-anchor">#</a> 1、登入数据库相关</h4> <p><strong>登录数据库</strong></p> <div class="language- extra-class"><pre class="language-text"><code>#登录数据库
+mysql -h localhost -u root -p dbName
+
+#本地
+mysql -u root -p
+&gt;输入密码
+
+
+#查看数据库信息
+select version();   #查看MySQL当前的版本
+show databases;     #查看有哪些数据库
+use testdb;         #切换数据库
+show tables;        #查看表
+show engines;       #查看存储引擎
+</code></pre></div><h4 id="_2、用户相关"><a href="#_2、用户相关" class="header-anchor">#</a> 2、用户相关</h4> <div class="language- extra-class"><pre class="language-text"><code>select user,host,password from mysql.user; #查询mysql数据库用户
+
+CREATE USER 'test@%' IDENTIFIED BY &quot;123456&quot;;                #创建用户
+CREATE USER 'username'@'localhost' IDENTIFIED BY 'password';#创建用户
+
+
+#某个用户从某台机器访问本台mysql服务器
+GRANT ALL ON dbname.tablename to user1@192.168.67.1;        #用户授权
+#mysql8授权：
+GRANT SELECT, INSERT ON db.* TO 'username'@'%';             #用户授权
+GRANT ALL PRIVILEGES ON db.* TO 'username'@'localhost';     #用户授权
+
+show grants for user_name@localhost;                #查看用户权限
+
+
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'password';     #修改用户密码
+
+#上面新建用户，修改用户密码，给用户授权后使用
+flush privileges;                                   #刷新权限
+</code></pre></div><h4 id="_3、数据库配置相关"><a href="#_3、数据库配置相关" class="header-anchor">#</a> 3、数据库配置相关</h4> <div class="language- extra-class"><pre class="language-text"><code>#创建数据库
+#utf8_bin 区分大小写，utf8_general_ci 不区分大小写
+CREATE DATABASE IF NOT EXISTS test DEFAULT CHARSET utf8 COLLATE utf8_bin; 
+
+#查看 MySQL 加载配置文件的顺序
+#后面的配置会覆盖前面相同的配置项
+mysqld --help --verbose | grep -A 1 'Default options'
+
+#查看MySQL的一些配置
+#比如查看MySQL的数据库文件存放在那个目录就可以用下面的命令
+show variables where Variable_name ='datadir'; 
+
+#关闭更新时的安全模式
+SET SQL_SAFE_UPDATES=0;
+
+#关闭自动提交
+SET AUTOCOMMIT=0; # 只对当前会话生效
+
+#设置自增从 10000 开始
+ALTER TABLE tableName AUTO_INCREMENT=10000; 
+
+#关闭外键 约束
+SELECT @@FOREIGN_KEY_CHECKS; 
+SET FOREIGN_KEY_CHECKS=1; // 开启外键约束 
+SET FOREIGN_KEY_CHECKS=0; // 关闭外键约束 
+
+#查看大小写是否敏感
+#mysql中控制数据库名和表名的大小写敏感由参数lower_case_table_names控制，为0时表示区分大小写，为1时，表示将名字转化为小写后存储，不区分大小写并且以_ci（大小写不敏感）、_cs（大小写敏感）或_bin 大小写敏感
+SHOW VARIABLES LIKE '%case%'; 
+
+# 查看安装的plugin
+show plugins; 
+</code></pre></div><h4 id="_4、日志相关"><a href="#_4、日志相关" class="header-anchor">#</a> 4、日志相关</h4> <div class="language- extra-class"><pre class="language-text"><code>#查看参数值
+show variables like &quot;%log%&quot;; 
+
+#查看错误日志的存放位置
+show variables like '%log_error%';
+
+#刷新binlog
+# 在mysql中flush logs操作会生成一个新的binlog文件 
+flush logs;
+
+#查看最后一个bin日志
+show master status; 
+
+#清空所有日志
+reset master; 
+</code></pre></div><h4 id="_5、数据库空间查看"><a href="#_5、数据库空间查看" class="header-anchor">#</a> 5、数据库空间查看</h4> <div class="language- extra-class"><pre class="language-text"><code>#查看数据库占用空间
+SELECT 
+    table_schema,
+    SUM(data_length + index_length) / 1024 / 1024 AS total_mb,
+    SUM(data_length) / 1024 / 1024 AS data_mb,
+    SUM(index_length) / 1024 / 1024 AS index_mb,
+    COUNT(*) AS tables,
+    CURDATE() AS today
+FROM
+    information_schema.tables
+GROUP BY table_schema
+ORDER BY 2 DESC; 
+
+#查看某个数据库表中的情况
+SELECT 
+    table_name,
+    (data_length / 1024 / 1024) AS data_mb,
+    (index_length / 1024 / 1024) AS index_mb,
+    ((data_length + index_length) / 1024 / 1024) AS all_mb,
+    table_rows
+FROM
+    information_schema.tables
+WHERE
+    table_schema = 'db_name'; 
+
+#查看某个库的具体情况
+show table status from db_name;
+
+#查看数据库中表碎片的情况
+SELECT TABLE_SCHEMA
+      ,TABLE_NAME 
+      ,ENGINE
+      ,ROUND(((DATA_LENGTH + INDEX_LENGTH) / 1024 / 1024), 2) AS SIZE_MB
+      ,ROUND(DATA_FREE/1024/1024,2) AS FREE_SIZ_MB
+FROM information_schema.TABLES 
+WHERE DATA_FREE &gt;=100*1024*1024
+ORDER BY FREE_SIZ_MB DESC;
+</code></pre></div><h3 id="数据库操作sql语句"><a href="#数据库操作sql语句" class="header-anchor">#</a> 数据库操作SQL语句</h3> <h4 id="_1、表操作"><a href="#_1、表操作" class="header-anchor">#</a> 1、表操作</h4> <div class="language- extra-class"><pre class="language-text"><code>#查看创建表的sql语句
+show create table t1; 
+
+#表删除
+truncate table1;        #删除一张表里所有的数据
+drop table table1;      #删除一张表
+
+#表复制
+create table bs_test2 like bs_test1 # 复制表结构 
+INSERT INTO bs_test1 SELECT * FROM bs_test2; #复制表中的数据 
+
+#给表添加注释
+ALTER TABLE 表名 COMMENT '注释的内容'
+#查看某个表的注释
+SELECT table_name,table_comment FROM information_schema.tables where table_name='表名' 
+
+#查询出 数据库 中所有的 表信息
+select table_name from information_schema.tables where table_schema='数据库名' and table_type='base table'; select * from information_schema.tables where table_schema='数据库名' and table_type='base table'; 
+
+#查看一张表 或 一条sql语句的执行情况
+(DESC 或 EXPLAIN) DESC SELECT * FROM bs_member DESC bs_member
+
+
+#创建 json 列，创建虚拟列 user_name，address
+CREATE TABLE `test` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `info` json NOT NULL,
+  `user_name` varchar(128) GENERATED ALWAYS AS (json_extract(`info`,'$.name')) VIRTUAL,
+  `address` varchar(128) GENERATED ALWAYS AS (json_extract(`info`,'$.address')) STORED,
+  PRIMARY KEY (`id`),
+  KEY `user_name_index` (`user_name`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8
+</code></pre></div><h4 id="_2、表查询"><a href="#_2、表查询" class="header-anchor">#</a> 2、表查询</h4> <div class="language- extra-class"><pre class="language-text"><code>#排序
+SELECT * FROM `tableName` ORDER BY colName desc, colName asc 
+#将字符型的 数字（ID_）转成数字来排序 +0 或 *1
+SELECT * FROM `tableName` order by ID_+0 asc; 
+
+#分组
+SELECT `colName `,count(*) as total FROM `tableName` GROUP BY colName 
+
+#查询 最后 10 条数据（id 自增）
+select * from wy_user order by id desc limit 10;
+
+#按某一列的值的长度查找，UTF8 编码中文长度为 3
+SELECT * FROM `bs_member` WHERE city like '%北京%' and length(city) &gt; 7
+
+
+#查询重复记录
+SELECT
+    id,email
+FROM
+    wy_user2
+WHERE
+    id IN (
+        SELECT
+            id
+        FROM
+            wy_user2
+        GROUP BY
+            email
+        HAVING
+            count(email) &gt; 1
+    )
+    
+    
+#删除重复记录，并保留id最小的记录
+delete from wy_user2 where id not in (select minid from (select min(id) as minid from wy_user2 group by email) b);
+</code></pre></div><h4 id="_3、索引相关"><a href="#_3、索引相关" class="header-anchor">#</a> 3、索引相关</h4> <div class="language- extra-class"><pre class="language-text"><code>#添加主键索引
+#它 是一种特殊的唯一索引，不允许有空值
+ALTER TABLE `table_name` ADD PRIMARY KEY ( `column` ) 
+
+#添加唯一索引
+#与&quot;普通索引&quot;类似，不同的就是：索引列的值必须唯一，但允许有空值。
+ALTER TABLE `table_name` ADD UNIQUE ( `column` ) 
+
+#添加普通索引
+ALTER TABLE `table_name` ADD INDEX index_name ( `column` ) 
+ALTER TABLE `table_name` ADD INDEX index_name ( `column1`, `column2`, `column3` ) 
+
+#添加全文索引
+#仅可用于 MyISAM 表，针对较大的数据，生成全文索引很耗时好空间 (适用于，大块数据，如文章内容)
+ALTER TABLE `table_name` ADD FULLTEXT ( `column`) 
+
+#查看表的索引信息
+show index from table1
+
+#删除索引
+DROP INDEX index_name ON table_name 
+
+#查询时禁止使用主键索引
+select * from tableName ignore index(PRI)
+
+#查询时禁止使用某些索引
+select * from tableName ignore index(PRI, indexName) 
+
+#查询时强制使用主键索引
+select * from tableName force index(PRI)
+
+#查询时强制使用某些索引
+select * from tableName force index(PRI, indexName)
+
+</code></pre></div><h4 id="_4、数据备份与导入"><a href="#_4、数据备份与导入" class="header-anchor">#</a> 4、数据备份与导入</h4> <div class="language- extra-class"><pre class="language-text"><code>#数据库备份
+/usr/local/mysql/bin/mysqldump -u root -p lemon &gt; lemon.sql /usr/local/mysql/bin/mysqldump -u root -p dbName tableName --where=&quot;...&quot; &gt; table.sql 
+
+#将 CSV 文件导入 Mysql 中
+LOAD DATA LOCAL INFILE '/home/db-friend/aff11.csv' into table user1 FIELDS TERMINATED BY ',' lines terminated by '\n' ignore 1 lines (pwsid,email,country,sex,birthday,state,zip,ip); 
+</code></pre></div></div></div> <!----> <div class="page-edit"><div class="edit-link"><a href="https://github.com/xiaomai653/blog/edit/master/docs/学习资料/02.常用命令/04.MySQL常用命令.md" target="_blank" rel="noopener noreferrer">编辑</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="tags"><a href="/tags/?tag=mysql" title="标签">#mysql</a></div> <!----></div> <div class="page-nav-wapper"><div class="page-nav-centre-wrap"><a href="/pages/33ee6d/" class="page-nav-centre page-nav-centre-prev"><div class="tooltip">Linux常用命令</div></a> <a href="/pages/a1ed3d/" class="page-nav-centre page-nav-centre-next"><div class="tooltip">Nginx常用命令</div></a></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/pages/33ee6d/" class="prev">Linux常用命令</a></span> <span class="next"><a href="/pages/a1ed3d/">Nginx常用命令</a>→
+      </span></p></div></div></div> <div class="article-list"><div class="article-title"><a href="/archives/" class="iconfont icon-bi">最近更新</a></div> <div class="article-wrapper"><dl><dd>01</dd> <dt><a href="/pages/fde21f/"><div>
+            SpringCloud监控Admin
+            <!----></div></a> <span class="date">06-22</span></dt></dl><dl><dd>02</dd> <dt><a href="/pages/9d5dbe/"><div>
+            SpringCloud哨兵Sentinel
+            <!----></div></a> <span class="date">06-08</span></dt></dl><dl><dd>03</dd> <dt><a href="/pages/ffc151/"><div>
+            SpringCloud授权OAuth2
+            <!----></div></a> <span class="date">05-27</span></dt></dl> <dl><dd></dd> <dt><a href="/archives/" class="more">更多文章&gt;</a></dt></dl></div></div></main></div> <div class="footer"><!----> 
+  Theme by
+  <a href="https://github.com/xugaoyi/vuepress-theme-vdoing" target="_blank" title="本站主题">Vdoing</a> 
+    | Copyright © 2022-2022
+    <span></span></div> <div class="buttons"><div title="返回顶部" class="button blur go-to-top iconfont icon-fanhuidingbu" style="display:none;"></div> <div title="去评论" class="button blur go-to-comment iconfont icon-pinglun" style="display:none;"></div> <div title="主题模式" class="button blur theme-mode-but iconfont icon-zhuti"><ul class="select-box" style="display:none;"><li class="iconfont icon-zidong">
+          跟随系统
+        </li><li class="iconfont icon-rijianmoshi">
+          浅色模式
+        </li><li class="iconfont icon-yejianmoshi">
+          深色模式
+        </li><li class="iconfont icon-yuedu">
+          阅读模式
+        </li></ul></div></div> <div class="body-bg" style="background:url() center center / cover no-repeat;opacity:0.5;"></div> <!----> <!----></div><div class="global-ui"><canvas id="vuepress-canvas-cursor"></canvas><div id="goTop" class="hide-cat" data-v-bf92849a></div></div></div>
+    <script src="/assets/js/app.0d832ab6.js" defer></script><script src="/assets/js/2.8f160e24.js" defer></script><script src="/assets/js/32.7001f772.js" defer></script>
+  </body>
+</html>
